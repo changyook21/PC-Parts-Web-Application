@@ -15,6 +15,29 @@ Sale postings can include several attributes: images, location (google maps), qu
 manufacturer, category, and a description. Each post can be quickly and easily searched up and filtered
 out using the built in filter feature that can filter posts without reloading the page. 
 
+## List of available similar services:
+Craigslist - Craigslist is a very large and popular website that anyone can post anything they
+desire. Buying and selling products are sometimes hard to do since they are many scattered categories to
+choose from. I would end up with posts that are not useful to me. Messaging the buyer/seller requires
+another source of communication such as cell phone or email and not via the website.
+Our web application “PC Geeks” avoids this by making sure each item is under specific
+categories so there will be no overlaps. If a user wants to search up a name of a video card, only the same
+category of video card will appear. We also have a messaging system that allows the buyer to directly
+contact the seller. This way transactions can happen a lot quicker.
+
+## Future goal of our project:
+Future work I might want to see be done on this project is to incorporate components that
+analyze the costs of the posts. On the off chance that you see a section that is available to be purchased
+at a range of prices, I need to see the costs of comparable parts. At that point I can think about various
+posts in view of the cost for quality. 
+Additionally, I need to add highlights where it snatches the costs from retailers to contrast it with
+the costs taken by users. This will enable purchasers and dealers to get a feeling of the business
+transaction for a thing and change the second-hand cost appropriately.
+Other features include tracking how many specific items are for sale currently and automatic
+notification system for when a specific item hits a certain price. If one is overeager and confident in
+security practices, perhaps online money would be good to have implemented.
+
+
 ### To run the web app:
 1. Use `vagrant up` to launch the VM.
 2. Access `localhost:4200` on your host machine.
