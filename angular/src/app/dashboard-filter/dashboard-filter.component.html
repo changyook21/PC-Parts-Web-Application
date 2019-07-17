@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="body">
+    <pagination-controls (pageChange)="p = $event" class="pageing"></pagination-controls>
+    <form (keyup.enter)="search(saleItem.value)">
+
+      <div class="searchBar">
+        <label for="saleItem">Search:</label>
+        <input #saleItem type="text" class="form-control" id="saleItem">
+
+        <button (click)="search(saleItem.value)" class="btn btn-primary">
+          Search
+        </button>
+      </div>
+
+    </form>
+
+    <div class="grid grid-pad">
+      <span *ngFor="let sale of sales">
+        <a *ngIf="sale.item.toUpperCase().includes(make.toUpperCase())" class="col-1-4 loopDisplay">
+
+          <div class="module sale">
+            <h4>Selling {{sale.manufacturer}} {{sale.item}} for {{sale.price}}.00
+              in {{sale.quality}}</h4>
+            <p>
+              <button class="btn btn-primary detailButton" role="button" [routerLink]="['/detail', sale.id]">View Details</button>
+              <button class="btn btn-primary" role="button">Write a Review</button>
+            </p>
+          </div>
+          </a>
+
+        <a *ngIf="sale.manufacturer == make" class="col-1-4 loopDisplay">
+
+          <div class="module sale">
+            <div [ngStyle]="{'background-image': 'url(' + sale.item + ')'}">
+
+              <div class="transbox">
+               <h4>Selling {{sale.category}} {{sale.item}} for {{sale.price}}.00</h4>
+              </div>
+            <p>
+              <button class="btn btn-primary detailButton" role="button" [routerLink]="['/detail', sale.id]">View Details</button>
+              <button class="btn btn-primary" role="button">Write a Review</button>
+            </p>
+            </div>
+          </div>
+          </a>
+          <a *ngIf="sale.category == make" class="col-1-4 loopDisplay">
+
+            <div class="module sale">
+              <h4>Selling {{sale.manufacturer}} {{sale.item}} for {{sale.price}}.00
+                in {{sale.quality}}</h4>
+              <p>
+                <button class="btn btn-primary detailButton" role="button" [routerLink]="['/detail', sale.id]">View Details</button>
+                <button class="btn btn-primary" role="button">Write a Review</button>
+              </p>
+            </div>
+            </a>
+      </span>
+    </div>
+  </div>
+</div>
+
+

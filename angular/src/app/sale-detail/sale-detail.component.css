@@ -1,0 +1,28 @@
+.detailBody{
+  width:30%;
+  margin-left: 10%;
+  position: relative;
+}
+
+.panel-body{
+  margin:auto;
+}
+
+agm-map {
+  height: 25em;
+  width: 35em;
+  margin: auto;
+}
+
+.container {
+  position: absolute;
+  left: 100%;
+  top: 10%;
+}
+
+.panel-body{
+  margin-top: 15px;
+}
+.imagebox{
+  width:100%
+}

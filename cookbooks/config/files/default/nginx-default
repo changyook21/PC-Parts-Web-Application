@@ -1,0 +1,29 @@
+
+# Default server configuration
+#
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /home/ubuntu/angular/dist;
+
+	# Add index.php to the list if you are using PHP
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+	sendfile off;
+
+	location / {
+	    try_files $uri $uri/ /index.html =404;
+	}
+
+	location /api {
+		proxy_set_header Content-Type 'application/json';
+		proxy_set_header Accept 'application/json';
+		proxy_pass http://localhost:8000;
+	}
+
+	# location /static {
+	# 	alias /static;
+	# }
+}

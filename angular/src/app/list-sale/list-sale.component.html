@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="body">
+    <form (keyup.enter)="search(saleItem.value)" class="col-md-8">
+      <div class="searchBar">
+        <label for="saleItem">Search:</label>
+        <input #saleItem type="text" class="form-control" id="saleItem">
+
+        <button (click)="search(saleItem.value)" class="searchButton btn btn-primary">
+          Search
+        </button>
+
+        <div class="toggle">
+          <button class="grid-view" [routerLink]="['/dashboard']">Grid</button>
+          <button class="list-view" [routerLink]="['/list']">List</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="page">
+      <pagination-controls (pageChange)="p = $event" class="pageing"></pagination-controls>
+    </div>
+    
+    <div class="list">
+      <div class="item list col-centered"
+      *ngFor="let sale of sales | paginate: { itemsPerPage: 10, currentPage: p }"
+      class="row">
+        <div class="col-xs-12 col-md-6">
+          <ul>
+            <li>Selling {{sale.item}}</li>
+            <li>{{sale.manufacturer}} {{sale.category}}</li>
+            <li>${{sale.price}}</li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <button class="btn btn-primary detailButton" role="button" [routerLink]="['/detail', sale.id]">View Details</button>
+          <button class="btn btn-primary reportButton" role="button" [routerLink]="['/report', sale.id]">Report This Post</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
